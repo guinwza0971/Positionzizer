@@ -26,9 +26,8 @@
             
             <div class="item-4">
                 <label>Stop-loss type</label>
-                <span><input name="stoptype" type="radio" value="usepercent">Price change (%)
-                <input id="percentchange" type="number" min="0" value="5"></span>
-                <span><input name="stoptype" type="radio" value="useprice" checked="true">Exit price</span>
+                <span><span><input name="stoptype" type="radio" value="usepercent">Price change (%)<input id="percentchange" type="number" min="0" value="5"></span>
+                <span><input name="stoptype" type="radio" value="useprice" checked="true">Exit price</span></span>
             </div>
 
             <div class="item-5">
@@ -51,7 +50,7 @@
         
         <h2>Result</h2>
         <div class="outputzone">
-            Use position size of "<span id="result">200</span>" in cash for this trade.
+            Use position size of <strong>"<span id="result">200</span>"</strong> in cash for this trade.
         </div>
 
         <script src="main.js"></script>

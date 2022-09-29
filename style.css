@@ -27,6 +27,7 @@ div {
 .item-4 {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .item-8 {
@@ -48,7 +49,7 @@ input[type="number"] {
 
 @media only screen and (max-width: 420px) {
     * {
-        font-size: 14px;
+        font-size: 15.5px;
     }
 
     h1 {
