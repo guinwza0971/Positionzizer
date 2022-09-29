@@ -1,0 +1,62 @@
+h1 { 
+    font-style: bold;
+    }
+            
+button:hover {
+    cursor: pointer;
+    }
+
+div {
+    margin: 0.3rem;
+}
+
+input[type="number"] {
+    width: 5rem;
+    text-align: left;
+}
+
+#leverage {
+    width: 3rem;
+}
+
+@media only screen and (max-width: 480px) {
+    * {
+        font-size: 18px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    * {
+        font-size: 24px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+    
+    h2 {
+        font-size: 32px;
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    * {
+        font-size: 28px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+    
+    h2 {
+        font-size: 32px;
+    }
+}

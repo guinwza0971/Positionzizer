@@ -1,101 +1,59 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width", intial-scale="1.0">
         <title>Position Size Calculator</title>
-        <style>
-            h1 { 
-                font-style: bold;
-            }
-            
-            button:hover {
-                cursor: pointer;
-            }
-        </style>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1>Crypto-future Position Size Calculator</h1>
+        <h1>Position Size Calculator</h1>
         
-        <form>
+        <form class="inputzone">
             <div>
                 <label>Acceptable Risk Percentage (%)</label>
-                <input id="riskpercent" type="number" min="0" max="100" step="0.1">
+                <input id="riskpercent" type="number" min="0" max="100" step="0.1" value="2">
             </div>
 
             <div>
                 <label>Total portfolio cash amount</label>
-                <input id="totalcash" type="number" min="0">
+                <input id="totalcash" type="number" min="0" value="1000">
             </div>
             
             <div>
                 <label>Leverage 1:</label>
-                <input id="leverage" type="number" min="0" step="1">
+                <input id="leverage" type="number" min="0" step="1" value="2">
             </div>
 
             <div>
                 <label>Entry price</label>
-                <input id="entryprice" type="number" min="0">
+                <input id="entryprice" type="number" min="0" value="20000">
             </div>
             
             <div>
                 <label>Stop-loss type</label>
-                <input name="stoptype" type="radio" value="useprice">Exit price
+                <input name="stoptype" type="radio" value="useprice" checked="true">Exit price
                 <input name="stoptype" type="radio" value="usepercent">Percent change in price
             </div>
 
             <div id="stoptbypricediv">
                 <label>Exit price</label>
-                <input id="exitprice" type="number" min="0">
+                <input id="exitprice" type="number" min="0" value="18000">
             </div>
 
             <div id="stopbypercentdiv">
                 <label>Percent change</label>
-                <input id="percentchange" type="number" min="0">
+                <input id="percentchange" type="number" min="0" value="5">
             </div>
             
             <button type="button" id="button" onclick="calculatepositionsize()">Calculate</button>
         </form>
-
-        <div>
-            <h2>Result</h2>
-            <span id="result">N/A</span>
+        
+        <h2>Result</h2>
+        <div class="outputzone">
+            Use position size of "<span id="result">200</span>" in cash for this trade.
         </div>
 
-        <script>
-            function calculatepositionsize() {
-                let cash = document.getElementById("totalcash").value
-                let risk = document.getElementById("riskpercent").value
-                let leverage = document.getElementById("leverage").value
-                let entryprice = document.getElementById("entryprice").value
-                let exitprice = document.getElementById("exitprice").value
-                let percentchange = document.getElementById("percentchange").value
-                let mode
-            
-                const radiolist = document.getElementsByName("stoptype")
-                radiolist.forEach(element => {
-                    if(element.checked == true)
-                    {
-                        mode = element.value
-                    }
-                });
-                
-                let calculatedresult
-
-                if(leverage <= 1)
-                    leverage = leverage+1
-
-                if(mode =="useprice")
-                {
-                    calculatedresult = (cash * risk) / ((leverage - 1) * Math.abs(entryprice - exitprice)/entryprice*100)
-                }
-  
-                if(mode =="usepercent")
-                {
-                    calculatedresult = (cash * risk) / ((leverage - 1) * percentchange)
-                }
-
-                document.getElementById("result").innerHTML = calculatedresult;
-            }
-        </script>
+        <script src="main.js"></script>
     
     </body>
 </html>
