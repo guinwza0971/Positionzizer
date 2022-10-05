@@ -59,6 +59,9 @@ input[type="number"] {
     h2 {
         font-size: 18px;
     }
+    .item-8 {
+        max-width: 330px;
+    }
 }
 
 @media only screen and (min-width:421) and (max-width: 480px) {
@@ -72,6 +75,9 @@ input[type="number"] {
     
     h2 {
         font-size: 20px;
+    }
+    .item-8 {
+        max-width: 330px;
     }
 }
 
@@ -87,6 +93,9 @@ input[type="number"] {
     h2 {
         font-size: 32px;
     }
+    .item-8 {
+        max-width: 380px;
+    }
 }
 
 @media only screen and (min-width: 769px) {
@@ -100,5 +109,13 @@ input[type="number"] {
     
     h2 {
         font-size: 32px;
+    }
+}
+
+@media only screen and (min-width: 500px) {
+
+
+    .item-8 {
+        max-width: 550px;
     }
 }
