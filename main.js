@@ -17,17 +17,14 @@ function calculatepositionsize() {
     
     let calculatedresult
 
-    if(leverage <= 1)
-        leverage = leverage+1
-
     if(mode =="useprice")
     {
-        calculatedresult = (cash * risk) / ((leverage - 1) * Math.abs(entryprice - exitprice)/entryprice*100)
+        calculatedresult = (cash * risk) / ((leverage) * Math.abs(entryprice - exitprice)/entryprice*100)
     }
 
     if(mode =="usepercent")
     {
-        calculatedresult = (cash * risk) / ((leverage - 1) * percentchange)
+        calculatedresult = (cash * risk) / ((leverage) * percentchange)
     }
 
     document.getElementById("result").innerHTML = calculatedresult;
